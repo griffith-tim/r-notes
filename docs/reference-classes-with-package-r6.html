@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Beginning Computer Science with R</title>
+  <title>Surviving R for Ecologists</title>
   <meta name="description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R.">
   <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Beginning Computer Science with R" />
+  <meta property="og:title" content="Surviving R for Ecologists" />
   <meta property="og:type" content="book" />
   
   
@@ -17,15 +17,15 @@
   <meta name="github-repo" content="homerhanumat/r-notes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Beginning Computer Science with R" />
+  <meta name="twitter:title" content="Surviving R for Ecologists" />
   
   <meta name="twitter:description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R." />
   
 
-<meta name="author" content="Homer White">
+<meta name="author" content="Homer White and Tim Griffith">
 
 
-<meta name="date" content="2017-06-20">
+<meta name="date" content="2017-06-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -412,7 +412,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Beginning Computer Science with R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Surviving R for Ecologists</a>
           </h1>
         </div>
 
@@ -422,7 +422,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="reference-classes-with-package-r6" class="section level2">
 <h2><span class="header-section-number">13.2</span> Reference Classes with Package R6</h2>
-<p>The package <strong>R6</strong> <span class="citation">(Chang <a href="#ref-R-R6">2017</a>)</span> provides access to R6 classes. You will need to attach it:</p>
+<p>The package <strong>R6</strong> <span class="citation">(Chang <a href="#ref-R-R6">2016</a>)</span> provides access to R6 classes. You will need to attach it:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(R6)</code></pre></div>
 <p>We’ll get started by creating a miniature computerized world of objects that is based on characters from the Wizard of Oz.</p>
 <div id="defining-a-class" class="section level3">
@@ -530,11 +530,11 @@ a</code></pre></div>
 <p>We can use the function <code>address()</code>  from the package <strong>pryr</strong> <span class="citation">(Wickham <a href="#ref-R-pryr">2015</a>)</span> to track what is happening behind the scenes. <code>address()</code> will tell us the current location in memory of the value corresponding to a name. Let’s repeat the above process, but use <code>address()</code> to see where the values are stored:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="dv">10</span>
 pryr::<span class="kw">address</span>(a)</code></pre></div>
-<pre><code>## [1] &quot;0x12adb6388&quot;</code></pre>
+<pre><code>## [1] &quot;0x10c64e688&quot;</code></pre>
 <p>The value 10 is stored in the memory address given above. Next, let’s create <code>b</code> by assignment from <code>a</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span>a
 pryr::<span class="kw">address</span>(b)</code></pre></div>
-<pre><code>## [1] &quot;0x12adb6388&quot;</code></pre>
+<pre><code>## [1] &quot;0x10c64e688&quot;</code></pre>
 <p>For the moment <code>b</code> points to the same place in memory as <code>a</code> does, so it will yield 10:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b</code></pre></div>
 <pre><code>## [1] 10</code></pre>
@@ -543,14 +543,14 @@ pryr::<span class="kw">address</span>(b)</code></pre></div>
 <pre><code>## [1] 40</code></pre>
 <p>But for now <code>b</code> still points to the same place in memory that <code>a</code> does:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pryr::<span class="kw">address</span>(b)</code></pre></div>
-<pre><code>## [1] &quot;0x12adb6388&quot;</code></pre>
+<pre><code>## [1] &quot;0x10c64e688&quot;</code></pre>
 <p>But now let’s assign a new value to <code>b</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span><span class="dv">20</span>
 pryr::<span class="kw">address</span>(b)</code></pre></div>
-<pre><code>## [1] &quot;0x1223d2898&quot;</code></pre>
+<pre><code>## [1] &quot;0x10e5b62d8&quot;</code></pre>
 <p>Aha! <code>b</code> now points to a <strong>new</strong> location in the computer’s memory! That’s because R saw that the assignment operator was going to change the value of <code>b</code>. Since <code>b</code> has value semantics, R knows to set aside a new spot in memory to contain the value 20, and to associate the name <code>b</code> with that spot. That way, the new <code>b</code> won’t interfere with <code>a</code>, which points to the same old spot in memory and thus remains 10:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pryr::<span class="kw">address</span>(a)</code></pre></div>
-<pre><code>## [1] &quot;0x12adb6388&quot;</code></pre>
+<pre><code>## [1] &quot;0x10c64e688&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a</code></pre></div>
 <pre><code>## [1] 10</code></pre>
 <p>On the other hand, R6 objects have <em>reference semantics</em>. We can see this in action with the following example. First, let’s check on <code>dorothy</code>’s age:</p>
@@ -560,7 +560,7 @@ pryr::<span class="kw">address</span>(b)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dorothy2 &lt;-<span class="st"> </span>dorothy</code></pre></div>
 <p>Let’s check the memory locations:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(pryr::<span class="kw">address</span>(dorothy), pryr::<span class="kw">address</span>(dorothy2))</code></pre></div>
-<pre><code>## [1] &quot;0x1238bf0a8&quot; &quot;0x1238bf0a8&quot;</code></pre>
+<pre><code>## [1] &quot;0x12fc8f510&quot; &quot;0x12fc8f510&quot;</code></pre>
 <p>As with <code>a</code> and <code>b</code>, the two names initially point to the same place in memory.</p>
 <p>Now let’s change the age of <code>dorothy2</code> to 30:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dorothy2$age &lt;-<span class="st"> </span><span class="dv">30</span></code></pre></div>
@@ -569,7 +569,7 @@ pryr::<span class="kw">address</span>(b)</code></pre></div>
 <pre><code>## [1] 30</code></pre>
 <p>Whoa! Changing the age of <code>dorothy2</code> changed the age of <code>dorothy</code>! That’s because of the reference semantics: <code>dorothy2</code> continues to be associated with the same spot in memory as <code>dorothy</code>, <em>even after</em> we begin to make changes to it:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(pryr::<span class="kw">address</span>(dorothy), pryr::<span class="kw">address</span>(dorothy2))</code></pre></div>
-<pre><code>## [1] &quot;0x1238bf0a8&quot; &quot;0x1238bf0a8&quot;</code></pre>
+<pre><code>## [1] &quot;0x12fc8f510&quot; &quot;0x12fc8f510&quot;</code></pre>
 </div>
 <div id="cloning-an-object" class="section level3">
 <h3><span class="header-section-number">13.2.6</span> Cloning an Object</h3>
@@ -589,7 +589,7 @@ dorothy2</code></pre></div>
 ##     set_desire: function (val)</code></pre>
 <p><code>dorothy2</code> looks just like <code>dorothy</code>. However, the name <code>dorothy2</code> does not point to the same place in memory:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(pryr::<span class="kw">address</span>(dorothy), pryr::<span class="kw">address</span>(dorothy2))</code></pre></div>
-<pre><code>## [1] &quot;0x1238bf0a8&quot; &quot;0x122a79040&quot;</code></pre>
+<pre><code>## [1] &quot;0x12fc8f510&quot; &quot;0x1150d2920&quot;</code></pre>
 <p>Accordingly, changes to <code>dorothy2</code> will no longer result in changes to <code>dorothy</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dorothy2$age &lt;-<span class="st"> </span><span class="dv">100</span>
 dorothy$age</code></pre></div>
@@ -600,7 +600,7 @@ dorothy$age</code></pre></div>
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-R-R6">
-<p>Chang, Winston. 2017. <em>R6: Classes with Reference Semantics</em>. <a href="https://CRAN.R-project.org/package=R6" class="uri">https://CRAN.R-project.org/package=R6</a>.</p>
+<p>Chang, Winston. 2016. <em>R6: Classes with Reference Semantics</em>. <a href="https://CRAN.R-project.org/package=R6" class="uri">https://CRAN.R-project.org/package=R6</a>.</p>
 </div>
 <div id="ref-R-pryr">
 <p>Wickham, Hadley. 2015. <em>Pryr: Tools for Computing on the Language</em>. <a href="https://CRAN.R-project.org/package=pryr" class="uri">https://CRAN.R-project.org/package=pryr</a>.</p>

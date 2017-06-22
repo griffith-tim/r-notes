@@ -1,6 +1,6 @@
 --- 
-title: "Beginning Computer Science with R"
-author: "Homer White"
+title: "Surviving R for Ecologists"
+author: "Homer White and Tim Griffith"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook

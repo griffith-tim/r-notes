@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Beginning Computer Science with R</title>
+  <title>Surviving R for Ecologists</title>
   <meta name="description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R.">
   <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Beginning Computer Science with R" />
+  <meta property="og:title" content="Surviving R for Ecologists" />
   <meta property="og:type" content="book" />
   
   
@@ -17,15 +17,15 @@
   <meta name="github-repo" content="homerhanumat/r-notes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Beginning Computer Science with R" />
+  <meta name="twitter:title" content="Surviving R for Ecologists" />
   
   <meta name="twitter:description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R." />
   
 
-<meta name="author" content="Homer White">
+<meta name="author" content="Homer White and Tim Griffith">
 
 
-<meta name="date" content="2017-06-20">
+<meta name="date" content="2017-06-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -412,7 +412,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Beginning Computer Science with R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Surviving R for Ecologists</a>
           </h1>
         </div>
 
@@ -433,21 +433,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>As we mentioned previously, the Global Environment only one of many environments that exist in R. The <code>search()</code> function will show you a number of other environments:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">search</span>()</code></pre></div>
 <pre><code>##  [1] &quot;.GlobalEnv&quot;             &quot;package:R6&quot;            
-##  [3] &quot;package:tigerData&quot;      &quot;package:tigerstats&quot;    
-##  [5] &quot;package:abd&quot;            &quot;package:mosaic&quot;        
-##  [7] &quot;package:Matrix&quot;         &quot;package:lattice&quot;       
-##  [9] &quot;package:nlme&quot;           &quot;package:TurtleGraphics&quot;
-## [11] &quot;package:grid&quot;           &quot;package:mosaicData&quot;    
-## [13] &quot;package:dplyr&quot;          &quot;package:purrr&quot;         
-## [15] &quot;package:readr&quot;          &quot;package:tidyr&quot;         
-## [17] &quot;package:tibble&quot;         &quot;package:ggplot2&quot;       
-## [19] &quot;package:tidyverse&quot;      &quot;package:rvest&quot;         
-## [21] &quot;package:xml2&quot;           &quot;package:hrbrthemes&quot;    
-## [23] &quot;tools:rstudio&quot;          &quot;package:stats&quot;         
-## [25] &quot;package:graphics&quot;       &quot;package:grDevices&quot;     
-## [27] &quot;package:utils&quot;          &quot;package:datasets&quot;      
-## [29] &quot;package:methods&quot;        &quot;Autoloads&quot;             
-## [31] &quot;package:base&quot;</code></pre>
+##  [3] &quot;package:readr&quot;          &quot;package:tigerData&quot;     
+##  [5] &quot;package:tigerstats&quot;     &quot;package:abd&quot;           
+##  [7] &quot;package:mosaic&quot;         &quot;package:Matrix&quot;        
+##  [9] &quot;package:dplyr&quot;          &quot;package:lattice&quot;       
+## [11] &quot;package:nlme&quot;           &quot;package:TurtleGraphics&quot;
+## [13] &quot;package:grid&quot;           &quot;package:ggplot2&quot;       
+## [15] &quot;package:mosaicData&quot;     &quot;tools:rstudio&quot;         
+## [17] &quot;package:stats&quot;          &quot;package:graphics&quot;      
+## [19] &quot;package:grDevices&quot;      &quot;package:utils&quot;         
+## [21] &quot;package:datasets&quot;       &quot;package:methods&quot;       
+## [23] &quot;Autoloads&quot;              &quot;package:base&quot;</code></pre>
 <p><code>search()</code> returns a character vector of names of environments. The first element is the Global Environment itself. The second element is an environment that is associated with last <em>package</em> that R loaded, the third is an environment associated with the next-to-last package, and so on. Each item on the list is considered to be the <em>parent</em> of the environment that came before it. Thus, the Global Environment has a parent environment, a grandparent environment, and so on. The complete sequence of environments is called the <em>search path</em>. </p>
 <p>Just as the Global Environment has names for objects, so also the packages have names available for use. When you write code that contains a name, R will search for that name: first in your Global Environment, then in its parent environment—the environment of the last package loaded—and so on until it reaches the final package on the list: package <strong>base</strong>. If it can’t find the name anywhere, then it will throw an error, telling you that the object “cannot be found.”</p>
 <p>Let’s try this with a few examples. First, define a (hopefully) new variable:</p>
@@ -484,7 +480,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##         }
 ##     .Internal(cat(list(...), file, sep, fill, labels, append))
 ## }
-## &lt;bytecode: 0x10e0ab040&gt;
+## &lt;bytecode: 0x1059fc378&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 <p>I got the definition of the <code>cat()</code> function, all the way up in package <strong>base</strong>.</p>
 <p>Now try:</p>

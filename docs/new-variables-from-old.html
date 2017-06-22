@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Beginning Computer Science with R</title>
+  <title>Surviving R for Ecologists</title>
   <meta name="description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R.">
   <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Beginning Computer Science with R" />
+  <meta property="og:title" content="Surviving R for Ecologists" />
   <meta property="og:type" content="book" />
   
   
@@ -17,15 +17,15 @@
   <meta name="github-repo" content="homerhanumat/r-notes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Beginning Computer Science with R" />
+  <meta name="twitter:title" content="Surviving R for Ecologists" />
   
   <meta name="twitter:description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R." />
   
 
-<meta name="author" content="Homer White">
+<meta name="author" content="Homer White and Tim Griffith">
 
 
-<meta name="date" content="2017-06-20">
+<meta name="date" content="2017-06-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -412,7 +412,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Beginning Computer Science with R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Surviving R for Ecologists</a>
           </h1>
         </div>
 
@@ -446,7 +446,7 @@ for ( i in <span class="dv">1</span>:<span class="kw">length</span>(seat) ) {
                      <span class="st">&quot;3_back&quot;</span> =<span class="st"> &quot;Back&quot;</span>)
 }
 <span class="kw">str</span>(seat3)</code></pre></div>
-<pre><code>##  chr [1:71] &quot;Front&quot; &quot;Middle&quot; &quot;Middle&quot; &quot;Front&quot; &quot;Back&quot; &quot;Front&quot; &quot;Front&quot; ...</code></pre>
+<pre><code>##  chr [1:71] &quot;Front&quot; &quot;Middle&quot; &quot;Middle&quot; &quot;Front&quot; &quot;Back&quot; ...</code></pre>
 <p>The re-coding is done but the result is a character vector and not a factor. We have to make it a factor ourselves:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m111survey$seat3 &lt;-<span class="st"> </span><span class="kw">factor</span>(seat3, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;Front&quot;</span>, <span class="st">&quot;Middle&quot;</span>, <span class="st">&quot;Back&quot;</span>))</code></pre></div>
 <p>This seems like a lot of work!</p>

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Beginning Computer Science with R</title>
+  <title>Surviving R for Ecologists</title>
   <meta name="description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R.">
   <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Beginning Computer Science with R" />
+  <meta property="og:title" content="Surviving R for Ecologists" />
   <meta property="og:type" content="book" />
   
   
@@ -17,15 +17,15 @@
   <meta name="github-repo" content="homerhanumat/r-notes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Beginning Computer Science with R" />
+  <meta name="twitter:title" content="Surviving R for Ecologists" />
   
   <meta name="twitter:description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R." />
   
 
-<meta name="author" content="Homer White">
+<meta name="author" content="Homer White and Tim Griffith">
 
 
-<meta name="date" content="2017-06-20">
+<meta name="date" content="2017-06-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -412,7 +412,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Beginning Computer Science with R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Surviving R for Ecologists</a>
           </h1>
         </div>
 
@@ -423,7 +423,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="reading-text-files-with-readr" class="section level2">
 <h2><span class="header-section-number">11.3</span> Reading Text Files with <strong>readr</strong></h2>
 <p><code>words.txt</code> was unusually simple—just one piece of data per line. It made sense to read it into a vector. Most of the files that we encounter have a more complex structure. In many cases it is best to incorporate them into R as data frames.</p>
-<p>R has many tools for reading data into data frames; one of the most convenient—and most popular—is the set of functions in the <strong>readr</strong> package <span class="citation">(Wickham, Hester, and Francois <a href="#ref-R-readr">2017</a>)</span>.</p>
+<p>R has many tools for reading data into data frames; one of the most convenient—and most popular—is the set of functions in the <strong>readr</strong> package <span class="citation">(Wickham and Francois <a href="#ref-R-readr">2015</a>)</span>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)</code></pre></div>
 <p>Let’s practice reading in a file from the Internet. The URL is:</p>
 <blockquote>
@@ -449,7 +449,7 @@ alcGDP$YearDisplay &lt;-<span class="st"> </span><span class="ot">NULL</span>
 alcGDP$SexDisplay &lt;-<span class="st"> </span><span class="ot">NULL</span></code></pre></div>
 <p>Now take a look at the frame:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(alcGDP)</code></pre></div>
-<pre><code>## # A tibble: 6 × 3
+<pre><code>## # A tibble: 6 x 3
 ##       country liters    gdp
 ##         &lt;chr&gt;  &lt;dbl&gt;  &lt;int&gt;
 ## 1 Afghanistan    0.0  20842
@@ -472,7 +472,7 @@ alcGDP$SexDisplay &lt;-<span class="st"> </span><span class="ot">NULL</span></co
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-R-readr">
-<p>Wickham, Hadley, Jim Hester, and Romain Francois. 2017. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr" class="uri">https://CRAN.R-project.org/package=readr</a>.</p>
+<p>Wickham, Hadley, and Romain Francois. 2015. <em>Readr: Read Tabular Data</em>. <a href="https://CRAN.R-project.org/package=readr" class="uri">https://CRAN.R-project.org/package=readr</a>.</p>
 </div>
 </div>
             </section>

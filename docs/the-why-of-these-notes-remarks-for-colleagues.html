@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Beginning Computer Science with R</title>
+  <title>Surviving R for Ecologists</title>
   <meta name="description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R.">
   <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Beginning Computer Science with R" />
+  <meta property="og:title" content="Surviving R for Ecologists" />
   <meta property="og:type" content="book" />
   
   
@@ -17,15 +17,15 @@
   <meta name="github-repo" content="homerhanumat/r-notes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Beginning Computer Science with R" />
+  <meta name="twitter:title" content="Surviving R for Ecologists" />
   
   <meta name="twitter:description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R." />
   
 
-<meta name="author" content="Homer White">
+<meta name="author" content="Homer White and Tim Griffith">
 
 
-<meta name="date" content="2017-06-20">
+<meta name="date" content="2017-06-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -412,7 +412,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Beginning Computer Science with R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Surviving R for Ecologists</a>
           </h1>
         </div>
 
@@ -432,7 +432,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Hence the niche for the notes (or perhaps text-under-development) offered here. I aim to be a bit more copious and slow-paced than Grolemund and a bit less sophisticated than Matloff. These notes will also contain a more extensive set of problems, ranging in difficulty from practice exercises to fairly extended projects that students might write up in R Markdown documents.</p>
 <p>Experienced programmers and R enthusiasts will be struck by the absence of certain topics. Programmers will observe that there is no real attention to algorithms (sorting is just <code>sort()</code> or <code>order()</code>), and although functions receive lots of attention there is no mention of recursion. In future editions I might cover recursion, as I believe that it is wonderful for the development of thinking skills, but it’s not likely that a web developer or data analyst would have the need to write a recursive function. Time spent on recursion and on various efficient algorithms for sorting and searching may be better spent, in my view, on extended programming projects, Shiny apps and blogging, and introductions to tools of the programmer’s trade such as version control and GitHub. I hope by the end of the first year to have made time for all of these “extra” topics. R-specific tools such as <strong>dplyr</strong> for data manipulation, the various packages for web scraping and database interface, as well as packages for machine learning, are considered in later courses in the minor that are more specifically concerned with data analysis.</p>
 <p>Two of the most fundamental topics in any comprehensive discussion of the R language—lexical scoping and computing on the language—are absent from this book. Lexical scoping and its implications are mentioned only in a brief footnote. Partly this is due the fact that most of the elementary applications of lexical scoping mentioned in the literature are related to scientific computing, which won’t be a concern for most of my students. Certainly lexical scoping is important for understanding how R-packages work, but elementary students don’t author packages. As for computing on the language it is true that users are affected by it all the time (e.g., whenever they use functions with a formula interface), but generally one need not perform any computation on the language until one begins writing formula-interface functions for the benefit of casual R-users.</p>
-<p>On the other hand I have made some effort to explore programming paradigms other than procedural programming, perhaps in a bit more depth than in other elementary texts that teach with a scripting language. There is a chapter on functional programming that, although it admittedly does not get far into the functional paradigm, at least does treat extensively of R’s support for higher-order functions. A chapter on object-oriented programming covers not only the generic-function OO that has been with R from the start but also an implementation of message-passing OO (Winston Chang’s <strong>R6</strong> package <span class="citation">(Chang <a href="#ref-R-R6">2017</a>)</span>). My hope is that these topics will not only sharpen my students’ R-programming skills but also prepare them for encounters with the OO-methods and higher-order functions that are ubiquitous in JavaScript. Finally, there is a pretty serious chapter on regular expressions, because:</p>
+<p>On the other hand I have made some effort to explore programming paradigms other than procedural programming, perhaps in a bit more depth than in other elementary texts that teach with a scripting language. There is a chapter on functional programming that, although it admittedly does not get far into the functional paradigm, at least does treat extensively of R’s support for higher-order functions. A chapter on object-oriented programming covers not only the generic-function OO that has been with R from the start but also an implementation of message-passing OO (Winston Chang’s <strong>R6</strong> package <span class="citation">(Chang <a href="#ref-R-R6">2016</a>)</span>). My hope is that these topics will not only sharpen my students’ R-programming skills but also prepare them for encounters with the OO-methods and higher-order functions that are ubiquitous in JavaScript. Finally, there is a pretty serious chapter on regular expressions, because:</p>
 <ul>
 <li>they are useful in data analysis;</li>
 <li>I have not found a treatment of regular expressions in R that a person without significant prior exposure to them in other languages has a prayer of following;</li>
@@ -443,7 +443,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-R-bookdown">
-<p>Xie, Yihui. 2017b. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://github.com/rstudio/bookdown" class="uri">https://github.com/rstudio/bookdown</a>.</p>
+<p>Xie, Yihui. 2017b. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
 </div>
 <div id="ref-R-blogdown">
 <p>Xie, Yihui. 2017a. <em>Blogdown: Create Blogs and Websites with R Markdown</em>. <a href="https://github.com/rstudio/blogdown" class="uri">https://github.com/rstudio/blogdown</a>.</p>
@@ -458,7 +458,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Grolemund, Garrett. 2014. <em>Hands on Programming with R</em>. O’Reilly Media. <a href="http://shop.oreilly.com/product/0636920028574.do" class="uri">http://shop.oreilly.com/product/0636920028574.do</a>.</p>
 </div>
 <div id="ref-R-R6">
-<p>Chang, Winston. 2017. <em>R6: Classes with Reference Semantics</em>. <a href="https://CRAN.R-project.org/package=R6" class="uri">https://CRAN.R-project.org/package=R6</a>.</p>
+<p>Chang, Winston. 2016. <em>R6: Classes with Reference Semantics</em>. <a href="https://CRAN.R-project.org/package=R6" class="uri">https://CRAN.R-project.org/package=R6</a>.</p>
 </div>
 </div>
             </section>

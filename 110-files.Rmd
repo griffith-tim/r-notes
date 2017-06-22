@@ -108,7 +108,7 @@ The easiest way to learn the functions of **readr** is to use a widget supplied 
 * You may then press the **Import** button.
 
 ```{r include = F}
-alcGDP <- read_csv("~/git/r-notes/downloads/alcGDP.csv")
+alcGDP <- read_csv("downloads/alcGDP.csv")
 save(alcGDP, file = "downloads/alcGDP.rda")
 ```
 

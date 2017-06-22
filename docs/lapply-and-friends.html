@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Beginning Computer Science with R</title>
+  <title>Surviving R for Ecologists</title>
   <meta name="description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R.">
   <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Beginning Computer Science with R" />
+  <meta property="og:title" content="Surviving R for Ecologists" />
   <meta property="og:type" content="book" />
   
   
@@ -17,15 +17,15 @@
   <meta name="github-repo" content="homerhanumat/r-notes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Beginning Computer Science with R" />
+  <meta name="twitter:title" content="Surviving R for Ecologists" />
   
   <meta name="twitter:description" content="Notes for Computer Science 115 and 215 at Georgetown College, Kentucky. The language of instruction is R." />
   
 
-<meta name="author" content="Homer White">
+<meta name="author" content="Homer White and Tim Griffith">
 
 
-<meta name="date" content="2017-06-20">
+<meta name="date" content="2017-06-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -412,7 +412,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Beginning Computer Science with R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Surviving R for Ecologists</a>
           </h1>
         </div>
 
@@ -433,11 +433,11 @@ for ( i in <span class="dv">1</span>:<span class="dv">5</span> ) {
 }
 <span class="kw">str</span>(lst)</code></pre></div>
 <pre><code>## List of 5
-##  $ : num [1:10] 0.843 0.841 0.707 0.292 0.628 ...
-##  $ : num [1:10] 0.5575 0.1157 0.8621 0.0297 0.8882 ...
-##  $ : num [1:10] 0.8198 0.6424 0.0223 0.8143 0.0659 ...
-##  $ : num [1:10] 0.4534 0.5281 0.3349 0.6864 0.0683 ...
-##  $ : num [1:10] 0.255 0.654 0.312 0.201 0.181 ...</code></pre>
+##  $ : num [1:10] 0.977 0.546 0.271 0.189 0.267 ...
+##  $ : num [1:10] 0.7842 0.0384 0.5677 0.9629 0.5131 ...
+##  $ : num [1:10] 0.967 0.184 0.268 0.477 0.263 ...
+##  $ : num [1:10] 0.1517 0.9318 0.2411 0.3267 0.0647 ...
+##  $ : num [1:10] 0.879 0.573 0.364 0.524 0.604 ...</code></pre>
 <p>If we wanted the vectors to have length <span class="math inline">\(1, 4, 9, 16,\)</span> and 25, then we could write:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lst &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">mode =</span> <span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">5</span>)
 for ( i in <span class="dv">1</span>:<span class="dv">5</span> ) {
